@@ -11,7 +11,7 @@ file(COPY include/ DESTINATION ${SLARTIBARTFAST_INCLUDE_DIR})
 
 add_executable(slartibartfast slartibartfast.cpp)
 target_link_libraries(slartibartfast PUBLIC 
-  slartibartfastobj ${ROOT_LIBRARIES} ${Geant4_LIBRARIES} ${Ratpac_LIBRARIES})
+  slartibartfastobj ${Ratpac_LIBRARIES} ${ROOT_LIBRARIES} ${Geant4_LIBRARIES})
 
 set_target_properties(slartibartfastobj slartibartfast
     PROPERTIES
