@@ -55,9 +55,9 @@ option(SLARTIBARTFAST_RAT "build rat executable" ON)
 ###########################################################
 # Set up third party libraries
 if(ROOT_DIR)
-  find_package(ROOT NO_DEFAULT_PATH CONFIG REQUIRED COMPONENTS Minuit2 ROOTTPython)
+  find_package(ROOT NO_DEFAULT_PATH CONFIG REQUIRED COMPONENTS MathMore Minuit2 ROOTTPython)
 else()
-  find_package(ROOT CONFIG REQUIRED COMPONENTS Minuit2 ROOTTPython)
+  find_package(ROOT CONFIG REQUIRED COMPONENTS MathMore Minuit2 ROOTTPython)
 endif()
 include(${ROOT_USE_FILE})
 
