@@ -1,8 +1,8 @@
 #!/bin/bash
 
-lower='slartibartfast'
-upper='SLARTIBARTFAST'
-mixed='Slartibartfast'
+lower='dichroicon'
+upper='DICHROICON'
+mixed='Dichroicon'
 
 if [ ! -z $1 ]
 then

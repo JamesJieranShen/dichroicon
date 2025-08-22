@@ -7,4 +7,4 @@ all:
 	cmake --build $(build_directory) -- $(MAKEFLAGS)
 	cmake --install $(build_directory) &>/dev/null
 clean:
-	rm -rf $(build_directory) $(install_directory) slartibartfast.sh
+	rm -rf $(build_directory) $(install_directory) dichroicon.sh

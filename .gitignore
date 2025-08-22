@@ -2,7 +2,7 @@ bin/*
 *.root
 *.log
 *.o
-slartibartfast.sh
+dichroicon.sh
 install/*
 build/*
 Config.hh

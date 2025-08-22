@@ -1,27 +1,27 @@
-add_library( slartibartfastobj OBJECT
+add_library( dichroiconobj OBJECT
   # Append each .cc file
-  Slartibartfast.cc
+  Dichroicon.cc
 )
 
-target_include_directories( slartibartfastobj PUBLIC
-  $<BUILD_INTERFACE:${SLARTIBARTFAST_INCLUDE_DIR}>
+target_include_directories( dichroiconobj PUBLIC
+  $<BUILD_INTERFACE:${DICHROICON_INCLUDE_DIR}>
   $<INSTALL_INTERFACE:include>)
 
-file(COPY include/ DESTINATION ${SLARTIBARTFAST_INCLUDE_DIR})
+file(COPY include/ DESTINATION ${DICHROICON_INCLUDE_DIR})
 
-add_executable(slartibartfast slartibartfast.cpp)
-target_link_libraries(slartibartfast PUBLIC 
-  slartibartfastobj ${Ratpac_LIBRARIES} ${ROOT_LIBRARIES} ${Geant4_LIBRARIES})
+add_executable(dichroicon dichroicon.cpp)
+target_link_libraries(dichroicon PUBLIC 
+  dichroiconobj ${Ratpac_LIBRARIES} ${ROOT_LIBRARIES} ${Geant4_LIBRARIES})
 
-set_target_properties(slartibartfastobj slartibartfast
+set_target_properties(dichroiconobj dichroicon
     PROPERTIES
-    ARCHIVE_OUTPUT_DIRECTORY ${SLARTIBARTFAST_LIBRARY_DIR}
-    LIBRARY_OUTPUT_DIRECTORY ${SLARTIBARTFAST_LIBRARY_DIR})
+    ARCHIVE_OUTPUT_DIRECTORY ${DICHROICON_LIBRARY_DIR}
+    LIBRARY_OUTPUT_DIRECTORY ${DICHROICON_LIBRARY_DIR})
 
-install(TARGETS slartibartfastobj slartibartfast
+install(TARGETS dichroiconobj dichroicon
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin)
 
-install(DIRECTORY ${SLARTIBARTFAST_INCLUDE_DIR}
+install(DIRECTORY ${DICHROICON_INCLUDE_DIR}
     DESTINATION ${CMAKE_INSTALL_PREFIX})

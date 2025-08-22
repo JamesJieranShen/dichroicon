@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11...3.14)
-project(slartibartfast VERSION 1.0.0
-  DESCRIPTION "Slartibartfast Simulations"
+project(dichroicon VERSION 1.0.0
+  DESCRIPTION "Dichroicon Simulations"
   LANGUAGES C CXX)
 
 ###########################################################
@@ -46,11 +46,11 @@ endif()
 
 ###########################################################
 # Options
-set(SLARTIBARTFAST_BINARY_DIR ${PROJECT_BINARY_DIR}/bin CACHE PATH "Where to output executables")
-set(SLARTIBARTFAST_LIBRARY_DIR ${PROJECT_BINARY_DIR}/lib CACHE PATH "Where to output library files")
-set(SLARTIBARTFAST_INCLUDE_DIR ${PROJECT_BINARY_DIR}/include CACHE PATH "Where to collect headers")
-set(SLARTIBARTFAST_CMAKE_DIR ${PROJECT_BINARY_DIR}/cmake CACHE PATH "Where to cmake configuration")
-option(SLARTIBARTFAST_RAT "build rat executable" ON)
+set(DICHROICON_BINARY_DIR ${PROJECT_BINARY_DIR}/bin CACHE PATH "Where to output executables")
+set(DICHROICON_LIBRARY_DIR ${PROJECT_BINARY_DIR}/lib CACHE PATH "Where to output library files")
+set(DICHROICON_INCLUDE_DIR ${PROJECT_BINARY_DIR}/include CACHE PATH "Where to collect headers")
+set(DICHROICON_CMAKE_DIR ${PROJECT_BINARY_DIR}/cmake CACHE PATH "Where to cmake configuration")
+option(DICHROICON_RAT "build rat executable" ON)
 
 ###########################################################
 # Set up third party libraries
@@ -75,10 +75,10 @@ configure_file(${CMAKE_SOURCE_DIR}/config/Config.hh.in
     @ONLY NEWLINE_STYLE UNIX)
 
 # Configure local scripts
-set(SLARTIBARTFASTROOT ${CMAKE_INSTALL_PREFIX})
-set(SLARTIBARTFASTSHARE ${PROJECT_SOURCE_DIR})
-configure_file(${CMAKE_SOURCE_DIR}/config/slartibartfast.sh.in
-  ${PROJECT_SOURCE_DIR}/slartibartfast.sh
+set(DICHROICONROOT ${CMAKE_INSTALL_PREFIX})
+set(DICHROICONSHARE ${PROJECT_SOURCE_DIR})
+configure_file(${CMAKE_SOURCE_DIR}/config/dichroicon.sh.in
+  ${PROJECT_SOURCE_DIR}/dichroicon.sh
   @ONLY NEWLINE_STYLE UNIX)
 
 ###########################################################
@@ -89,26 +89,26 @@ add_subdirectory(src)
 # Installation
 
 # Configure global scripts
-set(SLARTIBARTFASTSHARE ${CMAKE_INSTALL_PREFIX}/share/slartibartfast)
-configure_file(${CMAKE_SOURCE_DIR}/config/slartibartfast.sh.in
-  ${SLARTIBARTFAST_BINARY_DIR}/slartibartfast.sh
+set(DICHROICONSHARE ${CMAKE_INSTALL_PREFIX}/share/dichroicon)
+configure_file(${CMAKE_SOURCE_DIR}/config/dichroicon.sh.in
+  ${DICHROICON_BINARY_DIR}/dichroicon.sh
   @ONLY NEWLINE_STYLE UNIX)
 
 # Install the data files
-install(DIRECTORY ratdb/ DESTINATION ${SLARTIBARTFASTSHARE}/ratdb
+install(DIRECTORY ratdb/ DESTINATION ${DICHROICONSHARE}/ratdb
   PATTERN "ratdb/*")
 
-install(DIRECTORY models/ DESTINATION ${SLARTIBARTFASTSHARE}/models
+install(DIRECTORY models/ DESTINATION ${DICHROICONSHARE}/models
   PATTERN "models/*")
 
 # Install the python files
-install(DIRECTORY utilities/ DESTINATION ${SLARTIBARTFASTSHARE}/utilities
+install(DIRECTORY utilities/ DESTINATION ${DICHROICONSHARE}/utilities
   PATTERN "utilities/*")
 
 # Install the mac files
-install(DIRECTORY macros/ DESTINATION ${SLARTIBARTFASTSHARE}/macros
+install(DIRECTORY macros/ DESTINATION ${DICHROICONSHARE}/macros
   PATTERN "macros/*")
 
 # Install env files
-install(FILES ${SLARTIBARTFAST_BINARY_DIR}/slartibartfast.sh
+install(FILES ${DICHROICON_BINARY_DIR}/dichroicon.sh
   DESTINATION bin)
