@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv) {
   auto parser = new RAT::AnyParse(argc, argv);
-  auto dichroicon = DICHROICON::Dichroicon(parser, argc, argv);
+  auto dichroicon = Dichroicon::Dichroicon(parser, argc, argv);
   dichroicon.Begin();
   dichroicon.Report();
 }

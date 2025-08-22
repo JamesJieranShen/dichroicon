@@ -2,6 +2,7 @@ bin/*
 *.root
 *.log
 *.o
+compile_commands.json
 dichroicon.sh
 install/*
 build/*

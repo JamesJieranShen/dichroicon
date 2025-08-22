@@ -9,7 +9,10 @@ target_include_directories( dichroiconobj PUBLIC
 
 file(COPY include/ DESTINATION ${DICHROICON_INCLUDE_DIR})
 
-add_executable(dichroicon dichroicon.cpp)
+add_executable(dichroicon 
+  dichroicon.cpp
+  GeoHexDichroiconFactory.cc
+)
 target_link_libraries(dichroicon PUBLIC 
   dichroiconobj ${Ratpac_LIBRARIES} ${ROOT_LIBRARIES} ${Geant4_LIBRARIES})
 

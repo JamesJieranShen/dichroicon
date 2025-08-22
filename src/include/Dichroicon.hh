@@ -2,16 +2,17 @@
 #define __DICHROICON_Dichroicon__
 
 #include <Config.hh>
+#include <GeoHexDichroiconFactory.hh>
 #include <RAT/AnyParse.hh>
 #include <RAT/ProcAllocator.hh>
 #include <RAT/ProcBlockManager.hh>
 #include <RAT/Rat.hh>
 
-namespace DICHROICON {
+namespace Dichroicon {
 class Dichroicon : public RAT::Rat {
-public:
+ public:
   Dichroicon(RAT::AnyParse *p, int argc, char **argv);
 };
-} // namespace DICHROICON
+}  // namespace Dichroicon
 
-#endif // __DICHROICON_Dichroicon__
+#endif  // __DICHROICON_Dichroicon__
