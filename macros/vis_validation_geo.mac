@@ -6,13 +6,16 @@
 
 /run/initialize
 
-/vis/open OGLSQt
+# /vis/open OGLSQt
+/vis/open RayTracer 1920x1080-0+0
+/vis/rayTracer/column 2000
+/vis/rayTracer/row 2000
 /vis/scene/create
 /vis/scene/add/volume
 /vis/sceneHandler/attach
 /vis/viewer/set/upVector 0.0 0.0 1.0
-/vis/viewer/set/viewpointThetaPhi -90 135 
-/vis/viewer/set/style s
+/vis/viewer/set/viewpointThetaPhi 30 0
+# /vis/viewer/set/style s
 /vis/viewer/flush
 
 ## Cut a plane through the detector

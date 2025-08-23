@@ -1,4 +1,5 @@
 #pragma once
+#include <G4VisAttributes.hh>
 #include <RAT/DB.hh>
 #include <RAT/GeoFactory.hh>
 
@@ -8,6 +9,9 @@ class GeoHexDichroiconFactory : public RAT::GeoFactory {
   GeoHexDichroiconFactory() : GeoFactory("hexdichroicon"){};
   G4VPhysicalVolume* Construct(RAT::DBLinkPtr table) override;
   G4LogicalVolume* MakeDichroicon(RAT::DBLinkPtr table);
+
+ protected:
+  const G4VisAttributes* GetVisAttributes(RAT::DBLinkPtr table);
 };
 
 }  // namespace Dichroicon
